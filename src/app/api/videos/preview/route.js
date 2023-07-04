@@ -6,15 +6,16 @@ export async function POST(req) {
         const body = await req.json()
         const newVideo = body.embedUrl
 
-        // Make new id from url that gets rid of the non unique part of url
-        const newId = body.embedUrl.split('https://www.tiktok.com/embed/')[1]
+        // // Make new id from url that gets rid of the non unique part of url
+        // const newId = body.embedUrl.split('https://www.tiktok.com/embed/')[1]
 
-        db.sadd('recent', {
-            url:body.embedUrl,
-            user: body.user,
+        await db.set('recent', {
+            url: newVideo,
             nickname: body.nickname,
+            user: body.user,
             numLiked: 0
         })
+
         return new Response('OK')
 
         // // Check if there are any videos added yet

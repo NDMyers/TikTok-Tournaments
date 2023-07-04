@@ -19,22 +19,23 @@ const PreviewSection = ({ recentVideo }) => {
         window.location.href='/preview'
     }
 
-    const acceptVideo = () => {
-        window.location.href='/videos'
+    const acceptVideo = async () => {
+        try {
+            await axios.post('/api/videos/add', {
+                url: recentVideo.url,
+                nickname: recentVideo.nickname,
+                user: recentVideo.user,
+                numLiked: recentVideo.numLiked
+            })
+        } catch (error) {
+            return new Response('Error adding video', { status: 400 })
+        } finally {
+            window.location.href='/videos'
+        }
     }
 
-    const removeVideo = async () => {
-        try {
-            const idToDelete = recentVideo.url.split('https://www.tiktok.com/embed/')[1]
-
-            await axios.post('/api/videos/remove', {
-                videoId: idToDelete
-            })
-
-            window.location.href='/'
-        } catch (error) {
-            return new Response('Error removing video', { status: 400 })
-        }
+    const removeVideo = () => {
+        window.location.href = '/'
     }
 
 
@@ -60,7 +61,6 @@ const PreviewSection = ({ recentVideo }) => {
                     <X className="text-red-700 w-14 h-14 hover:animate-pulse" />
                 </button>
             </div>
-
         </div>
     )
 }

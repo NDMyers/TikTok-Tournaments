@@ -8,14 +8,15 @@ import { db } from '@/lib/db'
 import { fetchRedis } from './helpers/redis'
 import { updateRecent } from './helpers/dbOperations'
 import Link from 'next/link'
+import HomePageExampleButton from '@/components/HomePageExampleButton'
 
 const interFont = Inter({ subsets: ['latin'] })
 const boogalooFont = Boogaloo({ weight: '400', subsets: ['latin'] })
 
-export default async function Home() {
+export default function Home() {
 
   // Put in 8 example videos at start in case user does not want to find videos
-  exampleVideos()
+  // exampleVideos()
 
   // result.url, result.recent, result.numLiked
 
@@ -28,8 +29,9 @@ export default async function Home() {
         </h1>
 
         <div className='colorBox rounded-3xl pt-8 pb-16 sm:px-32 px-16 mt-10'>
-          <div className='flex flex-col py-8'>
+          <div className='flex flex-col items-center py-8'>
             <p className='text-white text-2xl font-semibold text-center'>Submit a video:</p>
+            <HomePageExampleButton />
             <div className='h-8 py-10 flex flex-col'>
               <label className='text-white pb-1 text-sm'>Username:</label>
               <input

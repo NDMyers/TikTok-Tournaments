@@ -6,8 +6,12 @@
 import Link from "next/link"
 import axios, { AxiosError } from 'axios'
 import { addNewTikTok } from "@/app/helpers/tiktok"
+import { Router } from "lucide-react"
+import { useRouter } from "next/navigation"
 
-const HomePageButtons = (db) => {
+const HomePageButtons = () => {
+
+    const router = useRouter()
 
     const addVideo = async () => {
         try {
@@ -37,7 +41,7 @@ const HomePageButtons = (db) => {
     }
 
     const toVideos = () => {
-        window.location.href = '/videos'
+        router.push(`/videos?example=${false}`)
     }
 
     return (

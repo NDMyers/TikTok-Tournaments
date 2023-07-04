@@ -1,12 +1,14 @@
-import { db } from "@/lib/db"
+import { addNewTikTok } from "./tiktok"
 
-const { fetchRedis } = require("./redis")
-
-export const exampleVideos = async () => {
-    // const url1 = {url : 'https://www.tiktok.com/@petsfunny_cute1/video/7144223177512652075?lang=en', 
-    //               numLiked: 0}
-    // const url2 = {url: 'https://www.tiktok.com/@catgivry/video/7184354701629033770?lang=en&q=cat&t=1688278118908',  
-    //               numLiked: 0}
+export const exampleVideos = () => {
+    const url1 = {url: 'https://www.tiktok.com/embed/7144223177512652075?lang=en', 
+                  nickname: 'tongue_dog',
+                  user: 'example',
+                  numLiked: 0}
+    const url2 = {url: 'https://www.tiktok.com/embed/7184354701629033770?lang=en&q=cat&t=1688278118908',  
+                  nickname: 'dance_kitten',
+                  user: 'example',
+                  numLiked: 0}
 
     // To fill in later
     // const url3 = 
@@ -16,7 +18,6 @@ export const exampleVideos = async () => {
     // const url7 = 
     // const url8 = 
 
-    // await db.set(1, url1)
-    // await db.set(2, url2)
+    return [url1,url2]
 
 }
