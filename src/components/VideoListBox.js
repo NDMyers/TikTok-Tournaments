@@ -7,7 +7,7 @@ import { FC, useState } from 'react'
 
 const page = ( { video, isExample } ) => {
 
-    const router = useRouter
+    const router = useRouter()
 
     const deleteVideo = async () => {
         try {

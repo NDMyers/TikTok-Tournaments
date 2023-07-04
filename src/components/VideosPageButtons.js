@@ -13,7 +13,7 @@ const VideosPageButtons = ({ isExample }) => {
 
     const startGame = () => {
         // window.location.href = '/compare'
-        router.push(`/compare?query=${isExample}`)
+        router.push(`/compare?example=${isExample}`)
     }
 
     return (
