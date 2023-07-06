@@ -65,7 +65,7 @@ const CompareSection = ({ isExample, video1, video2 }) => {
 
             <div className=''>
                 <div className="overflow-hidden max-w-[22rem]">
-                    <div className={`text-3xl ${boogalooFont.className} text-center pt-2`}>{video2.nickname}</div>
+                    <div className={`text-3xl ${boogalooFont.className} text-center sm:pt-2`}>{video2.nickname}</div>
                     <div className='bg-rose-500 rounded-3xl p-6 h-auto'>
                         <iframe id='preview' className="h-[68vh]" scrolling='no' src={video2.url}></iframe>
                     </div>
