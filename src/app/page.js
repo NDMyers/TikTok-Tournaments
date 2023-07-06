@@ -23,7 +23,7 @@ export default function Home() {
 
 
   return (
-      <div className='flex flex-col items-center sm:pt-24 pt-2'>
+      <div className='flex flex-col items-center sm:pt-24 pt-4'>
         <h1 className={`text-6xl flex-wrap text-center ${boogalooFont.className}`}>
           TikTok Tournaments
         </h1>

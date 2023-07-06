@@ -53,7 +53,7 @@ const HomePageButtons = () => {
 
     return (
 
-        <div className='flex flex-row md:w-1/2 w-full justify-evenly sm:pt-10 pt-4'>
+        <div className='flex flex-row md:w-1/2 w-full justify-evenly sm:pt-10 pt-8'>
             <div className='flex w-auto'>
                 <button
                     onClick={addVideo}

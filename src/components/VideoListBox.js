@@ -35,12 +35,12 @@ const VideoListBox = ( { video, isExample } ) => {
 
     return (
         
-        <div className={ isExample ? 'sm:p-4 p-1.5 flex flex-row' : 'sm:p-4 p-1.5 flex flex-row mr-10'}>
+        <div className={ isExample ? 'sm:p-4 p-1.5 flex flex-row' : 'sm:p-4 p-3 flex flex-row mr-10'}>
             {isExample ? null : (<button className='pr-4' onClick={deleteVideo}>
                 {delIsLoading ? <Loader2Icon className='text-red-500 animate-spin' /> :
                 <X className='text-red-500 hover:animate-pulse' />}
             </button> )}
-            <li className='videoListBox bg-slate-200 w-80 h-12 rounded-2xl p-4'>
+            <li className='videoListBox bg-slate-200 sm:w-80 w-72 h-12 rounded-2xl p-4'>
                 <p className='text-gray-500'>{video === undefined ? '' : video.nickname}</p>
             </li>
         </div>
