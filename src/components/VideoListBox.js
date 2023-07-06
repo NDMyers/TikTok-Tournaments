@@ -35,7 +35,7 @@ const VideoListBox = ( { video, isExample } ) => {
 
     return (
         
-        <div className={ isExample ? 'sm:p-4 p-1.5 flex flex-row' : 'sm:p-4 p-3 flex flex-row mr-10'}>
+        <div className={ isExample ? 'sm:p-4 p-3 flex flex-row' : 'sm:p-4 p-3 flex flex-row mr-10'}>
             {isExample ? null : (<button className='pr-4' onClick={deleteVideo}>
                 {delIsLoading ? <Loader2Icon className='text-red-500 animate-spin' /> :
                 <X className='text-red-500 hover:animate-pulse' />}

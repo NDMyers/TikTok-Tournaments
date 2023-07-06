@@ -35,7 +35,6 @@ export default function Home() {
             <div className='h-8 py-10 flex flex-col'>
               <label className='text-white pb-1 text-sm'>Username:</label>
               <input
-                autoFocus={true}
                 type='text'
                 id='userInput'
                 placeholder='Enter username'
