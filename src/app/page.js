@@ -28,7 +28,7 @@ export default function Home() {
           TikTok Tournaments
         </h1>
 
-        <div className='colorBox rounded-3xl pt-8 pb-16 sm:px-32 px-8 mt-10'>
+        <div className='colorBox rounded-3xl sm:pt-8 sm:pb-16 pb-6 sm:px-32 px-8 sm:mt-10 mt-4'>
           <div className='flex flex-col items-center py-8'>
             <p className='text-white text-2xl font-semibold text-center'>Submit a video:</p>
             <HomePageExampleButton />
@@ -43,7 +43,7 @@ export default function Home() {
               />
             </div>
 
-            <div className='h-8 py-12 flex flex-col'>
+            <div className='h-8 py-10 flex flex-col'>
               <label className='text-white pb-1 text-sm'>TikTok URL:</label>
               <input
                 type='text'

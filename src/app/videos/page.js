@@ -15,7 +15,7 @@ const page = async ({ searchParams }) => {
 
     return (
         <div className='h-full w-full flex items-center justify-center'>
-            <div className='flex flex-col p-10 max-w-screen-md h-auto items-center'>
+            <div className='flex flex-col sm:p-10 px-10 py-2 max-w-screen-md h-auto items-center'>
                 <ul className='flex flex-col'>
                     <VideoListBox video={videos[0]} isExample={isExample}/>
                     <VideoListBox video={videos[1]} isExample={isExample}/>

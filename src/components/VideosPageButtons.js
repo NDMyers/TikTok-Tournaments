@@ -23,7 +23,7 @@ const VideosPageButtons = ({ numVideos, isExample }) => {
 
     return (
 
-        <div className='flex flex-row w-full justify-evenly pt-8'>
+        <div className='flex flex-row w-full justify-evenly sm:pt-8 pt-1'>
             <div className='flex w-auto'>
                 { numVideos < 8 ? <button className='bg-slate-500 rounded-2xl px-8 py-5 hover:ring hover:ring-white cursor-default'><p className='text-white'>{numVideos}/8 to Start</p></button>
                 : (
