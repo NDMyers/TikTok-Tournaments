@@ -47,7 +47,7 @@ const CompareSection = ({ isExample, video1, video2 }) => {
     }
 
     return (
-        <div className='flex flex-row justify-evenly pt-10 flex-wrap'>
+        <div className='flex flex-row justify-evenly sm:pt-10 flex-wrap'>
             <div className=''>
                 <div className="overflow-hidden max-w-[22rem]">
                     <div className={`text-3xl ${boogalooFont.className} text-center pt-2`}>{video1.nickname}</div>

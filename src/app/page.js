@@ -23,12 +23,12 @@ export default function Home() {
 
 
   return (
-      <div className='flex flex-col items-center sm:pt-24 pt-12'>
-        <h1 className={`text-6xl ${boogalooFont.className}`}>
+      <div className='flex flex-col items-center sm:pt-24 pt-2'>
+        <h1 className={`text-6xl flex-wrap text-center ${boogalooFont.className}`}>
           TikTok Tournaments
         </h1>
 
-        <div className='colorBox rounded-3xl pt-8 pb-16 sm:px-32 px-16 mt-10'>
+        <div className='colorBox rounded-3xl pt-8 pb-16 sm:px-32 px-8 mt-10'>
           <div className='flex flex-col items-center py-8'>
             <p className='text-white text-2xl font-semibold text-center'>Submit a video:</p>
             <HomePageExampleButton />
