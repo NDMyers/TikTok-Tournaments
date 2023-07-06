@@ -29,7 +29,7 @@ const VideosPageButtons = ({ numVideos, isExample }) => {
                 : (
                 <button
                     onClick={startGame}
-                    className='bg-rose-500 rounded-2xl px-8 py-5 hover:ring hover:ring-cyan-400'
+                    className='bg-rose-500 rounded-2xl sm:px-8 px-5 py-5 hover:ring hover:ring-cyan-400'
                 >
                 {startIsLoading ? <Loader2Icon className="animate-spin text-white"/> : <p className="text-white">Start Game!</p>}
                 </button> )}
@@ -37,7 +37,7 @@ const VideosPageButtons = ({ numVideos, isExample }) => {
             <div className='flex w-auto'>
                 <button
                     onClick={toHomePage}
-                    className='bg-rose-500 rounded-2xl px-8 py-5 hover:ring hover:ring-cyan-400'
+                    className='bg-rose-500 rounded-2xl sm:px-8 px-5 py-5 hover:ring hover:ring-cyan-400'
                 >
                 {addIsLoading ? <Loader2Icon className="animate-spin text-white"/> : <p className="text-white">{isExample ? 'To Homepage' : 'Add Another'}</p>}
                 </button>
