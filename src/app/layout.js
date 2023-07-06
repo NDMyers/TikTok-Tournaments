@@ -5,8 +5,8 @@ const inter = Inter({ subsets: ['latin'] })
 const boogaloo = Boogaloo({ weight:'400', subsets: ['latin'] })
 
 export const metadata = {
-  title: 'TikTok Pets',
-  description: 'A TikTok pet video tournament bracket!',
+  title: 'TikTok Tournaments',
+  description: 'A TikTok video tournament bracket!',
 }
 
 export default function RootLayout({ children }) {

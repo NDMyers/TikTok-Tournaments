@@ -2,7 +2,7 @@
 
 import { removeVideo } from "@/app/helpers/tiktok"
 import axios, { AxiosError } from "axios"
-import { CheckIcon, Heart, RefreshCwIcon, X } from "lucide-react"
+import { CheckIcon, Heart, Loader2Icon, RefreshCwIcon, X } from "lucide-react"
 import { Boogaloo } from "next/font/google"
 import { useState } from "react"
 
@@ -13,6 +13,8 @@ const PreviewSection = ({ recentVideo }) => {
     const [isRefresh, setIsRefresh] = useState(false)
     const [isOkay, setIsOkay] = useState(false)
     const [isRemove, setIsRemove] = useState(false)
+    const [checkIsLoading, setCheckIsLoading] = useState(false)
+    const [xIsLoading, setXIsLoading] = useState(false)
 
     const refreshPage = () => {
         setIsRefresh(true)
@@ -21,6 +23,7 @@ const PreviewSection = ({ recentVideo }) => {
 
     const acceptVideo = async () => {
         try {
+            setCheckIsLoading(true)
             await axios.post('/api/videos/add', {
                 url: recentVideo.url,
                 nickname: recentVideo.nickname,
@@ -35,6 +38,7 @@ const PreviewSection = ({ recentVideo }) => {
     }
 
     const removeVideo = () => {
+        setXIsLoading(true)
         window.location.href = '/'
     }
 
@@ -50,16 +54,20 @@ const PreviewSection = ({ recentVideo }) => {
 
 
             <div className="flex flex-row justify-evenly py-4">
+                {checkIsLoading ? <Loader2Icon className="text-green-700 animate-spin w-14 h-14" /> : (
                 <button onClick={acceptVideo}>
                     <CheckIcon className="text-green-700 w-14 h-14 hover:animate-pulse"/>
                 </button>
+                )}
                 <button
                     onClick={refreshPage}>
                     <RefreshCwIcon className={isRefresh? 'w-11 h-11 animate-spin' : 'hover:animate-spin w-11 h-11'}/>
                 </button>
+                {xIsLoading ? <Loader2Icon className="text-red-700 animate-spin w-14 h-14" /> : (
                 <button onClick={removeVideo}>
                     <X className="text-red-700 w-14 h-14 hover:animate-pulse" />
                 </button>
+                )}
             </div>
         </div>
     )

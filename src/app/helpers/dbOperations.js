@@ -34,24 +34,32 @@ export const getMostRecent = async () => {
 }
 
 export const getAllVideos = async () => {
-    const videos = await db.keys('*')
-    const videosLength = videos.length
-    const videoIds = videos.splice(0,videosLength-3)
+    // const videos = await db.keys('*')
+    // const videosLength = videos.length
+    // const videoIds = videos.splice(0,videosLength-4)
 
-    const keyValues = new Array()
-    // For all keys not 'recent' and 'videos' and 'examples', get their values
-    for( let i = 0; i < videosLength-3; i++ ) {
-        keyValues.push(await db.get(videoIds[i]))
-    }
+    // const keyValues = new Array()
+    // // For all keys not 'recent' and 'videos' and 'examples', get their values
+    // for( let i = 0; i < videosLength-4; i++ ) {
+    //     keyValues.push(await db.get(videoIds[i]))
+    // }
 
-    // don't want to return keys with user:example (example videos, not user created ones)
-    for( let i = 0; i < keyValues.length; i++ ) {
-        if( keyValues[i].user === 'example' ) {
-            const toRemove = keyValues.splice(i,i)
-        }
-    }
+    // // don't want to return keys with user:example (example videos, not user created ones)
+    // for( let i = 0; i < keyValues.length; i++ ) {
+    //     if( keyValues[i].user === 'example' ) {
+    //         const toRemove = keyValues.splice(i,i)
+    //     }
+    // }
 
     // console.log(keyValues[0].url)
+
+    const videoSet = await db.smembers('videos')
+    const keyValues = new Array()
+
+    for( let i = 0; i < videoSet.length; i++ ) {
+        keyValues.push(await db.get(videoSet[i]))
+    }
+
     return keyValues
 }
 

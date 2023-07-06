@@ -25,7 +25,7 @@ export default function Home() {
   return (
       <div className='flex flex-col items-center sm:pt-24 pt-12'>
         <h1 className={`text-6xl ${boogalooFont.className}`}>
-          TikTok Pets
+          TikTok Tournaments
         </h1>
 
         <div className='colorBox rounded-3xl pt-8 pb-16 sm:px-32 px-16 mt-10'>
@@ -35,6 +35,7 @@ export default function Home() {
             <div className='h-8 py-10 flex flex-col'>
               <label className='text-white pb-1 text-sm'>Username:</label>
               <input
+                autoFocus={true}
                 type='text'
                 id='userInput'
                 placeholder='Enter username'

@@ -27,7 +27,7 @@ const page = async ({ searchParams }) => {
                     <VideoListBox video={videos[7]} isExample={isExample}/>
                 </ul>
 
-                <VideosPageButtons isExample={isExample}/>
+                <VideosPageButtons numVideos={videos.length} isExample={isExample}/>
             </div>
         </div>
     )
