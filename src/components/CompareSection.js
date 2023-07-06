@@ -55,7 +55,7 @@ const CompareSection = ({ isExample, video1, video2 }) => {
                         <iframe id='preview' className="h-[68vh]" scrolling='no' src={video1.url}></iframe>
                     </div>
                 </div>
-                <div className="flex flex-row justify-evenly py-4">
+                <div className="flex flex-row justify-evenly sm:py-4 py-2">
                     <button
                         onClick={chooseWinner1}>
                         <Heart className={isWinner1 ? 'text-cyan-400 fill-red-700 w-14 h-14 animate-spin' : "text-red-700 w-14 h-14 hover:animate-pulse hover:fill-red-700"} />
@@ -70,7 +70,7 @@ const CompareSection = ({ isExample, video1, video2 }) => {
                         <iframe id='preview' className="h-[68vh]" scrolling='no' src={video2.url}></iframe>
                     </div>
                 </div>
-                <div className="flex flex-row justify-evenly py-4">
+                <div className="flex flex-row justify-evenly sm: py-2">
                     <button
                         onClick={chooseWinner2}>
                         <Heart className={isWinner2 ? 'text-cyan-400 fill-red-700 w-14 h-14 animate-spin' : "text-red-700 w-14 h-14 hover:animate-pulse hover:fill-red-700"} />
